@@ -14,7 +14,6 @@ public class Driver {
      */
     private Driver() {}
 
-
     /*
     Making our 'driver' instance private so that it is nor reachable from outside of the class.
     We maki it static, because we want it to run before everything else, and also we will use it in a static method
@@ -55,6 +54,10 @@ public class Driver {
         return driver;
     }
 
+    /*
+This method makes sure we have some form of driver session or driver id has
+Either null or not null it must exist
+ */
     public static void closeDriver() {
         if (driver!=null) {
             driver.quit();
