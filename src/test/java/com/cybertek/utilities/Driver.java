@@ -28,6 +28,7 @@ public class Driver {
             .getProperty method we creating in ConfigurationReader class.
              */
             String browserType = ConfigurationReader.getProperty("browser");
+            String env = ConfigurationReader.getProperty("env");
             /*
             Depending on the browser type out switch statement will determine
             to open specific type of browser/driver
@@ -38,6 +39,7 @@ public class Driver {
                     driver = new ChromeDriver();
                     driver.manage().window().maximize();
                     driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+                    driver.get(env);
                     break;
                 case "firefox":
                     WebDriverManager.firefoxdriver().setup();
