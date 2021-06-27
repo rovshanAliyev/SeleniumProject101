@@ -7,9 +7,9 @@ import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class vytrack {
+public class vytrack1 {
     @Test
-    public void refreshButton() {
+    public void resetButton() {
         //enter username
         Driver.getDriver().findElement(By.xpath("//input[@type='text']"))
                 .sendKeys(ConfigurationReader.getProperty("username"));
@@ -27,10 +27,12 @@ public class vytrack {
         //click on vehicles
         Driver.getDriver().findElement(By.xpath("//a[@href='entity/Extend_Entity_Carreservation']")).click();
 
-        //click on refresh
-        WebElement refreshButton1 = Driver.getDriver().findElement(By.xpath("//i[@class='fa-repeat']"));
-        refreshButton1.click();
-        Assert.assertTrue(refreshButton1.isDisplayed());
+        //click on reset
+        WebElement reset1 = Driver.getDriver().findElement(By.xpath("(//i[@class='fa-refresh'])[2]"));
+        reset1.click();
+        Assert.assertTrue(reset1.isDisplayed());
+
 
     }
+
 }
